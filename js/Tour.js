@@ -1,6 +1,6 @@
 AFRAME.registerComponent("tour", {
   init: function () {
-    this.placesContainer = this.el;   
+    this.placesContainer = this.el;
     this.createCards();
   },
 
@@ -20,7 +20,7 @@ AFRAME.registerComponent("tour", {
       {
         id: "eiffel-tower",
         title: "Eiffel Tower",
-        url: "./assets/thumbnails/eiffel_tower.png",
+        url: "./assets/thumbnails/eiffel_tower.jpg",
       },
       {
         id: "new-york-city",
@@ -40,7 +40,7 @@ AFRAME.registerComponent("tour", {
       // Border Element
       const borderEl = this.createBorder(position, item.id);
 
-      // Thubnail Element
+      // Thumbnail Element
       const thumbNail = this.createThumbNail(item);
       borderEl.appendChild(thumbNail);
 
@@ -66,7 +66,10 @@ AFRAME.registerComponent("tour", {
       opacity: 1,
     });
 
+    //Add cursor-listener component to the ring border entity to change it's color 
+    //On Cursor 'mouseenter' and 'mouseleave' entity
     entityEl.setAttribute("cursor-listener", {});
+
     return entityEl;
   },
   createThumbNail: function (item) {
@@ -78,7 +81,6 @@ AFRAME.registerComponent("tour", {
     });
     entityEl.setAttribute("material", { src: item.url });
 
-    entityEl.setAttribute("cursor-listener", {});
     return entityEl;
   },
   createTitleEl: function (position, item) {
@@ -94,6 +96,7 @@ AFRAME.registerComponent("tour", {
     elPosition.y = -20;
     entityEl.setAttribute("position", elPosition);
     entityEl.setAttribute("visible", true);
+    
     return entityEl;
   },
 });

@@ -6,7 +6,6 @@ AFRAME.registerComponent("cursor-listener", {
     this.handleMouseEnterEvents();
     this.handleMouseLeaveEvents();
   },
-
   handlePlacesListState: function () {
     const id = this.el.getAttribute("id");
     const placesId = ["taj-mahal", "budapest", "new-york-city", "eiffel-tower"];
@@ -22,13 +21,13 @@ AFRAME.registerComponent("cursor-listener", {
     }
   },
   handleMouseEnterEvents: function () {
-    // Mouse Enter Events
+    //Cursor 'mouseenter' Events
     this.el.addEventListener("mouseenter", () => {
       this.handlePlacesListState();
     });
   },
   handleMouseLeaveEvents: function () {
-    // Mouse Leave Events
+    //Cursor 'mouseleave' Events
     this.el.addEventListener("mouseleave", () => {
       const { selectedItemId } = this.data;
       if (selectedItemId) {
